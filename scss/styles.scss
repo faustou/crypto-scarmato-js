@@ -1,0 +1,831 @@
+@import "utilities/variables.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(6, 17, 33);
+    
+}
+.contenedorIndex{
+    height: 80vh;
+    display: grid;
+
+    grid-template-areas: 
+    "main main main"
+    "section section section"
+    "aside aside aside"
+    "footer footer footer"
+    ;
+}
+.navegador{
+    background-color: rgb(6, 17, 33);
+    grid-area: header;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+.menu{
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+}
+.bg-menu-color{
+    background-color: rgb(6, 17, 33);
+}
+.nav-item a{
+    color: gray;
+}
+.navbar-toggler-icon{
+    color: azure;
+}
+.nav-item a:hover{
+    color: gray;
+}
+.menu li a:hover{
+    color: white;
+}
+.dropdown-menu{
+    background-color: rgb(6, 17, 33);
+}
+.menu li a{
+    font-size: small;
+    color: grey;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+header img{
+    height: 45px;
+    width: 45px;
+}
+.logotipoGrande{
+    display: none;
+}
+main{
+    background-color: rgb(6, 17, 33);
+    grid-area: main;
+}
+.primerBloque{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+#fondo{
+    width: 100%;
+    height: 40rem;
+    background-image: url(../img/bannerPrincipal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.textoBienvenida{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+.botonBienvenida{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    color: black;
+    text-decoration: none;
+}
+.carrusel{
+    background-color: rgb(6, 17, 33);
+    grid-area: section;
+}
+.carruselDos{
+    display: none;
+    background-color: rgb(6, 17, 33);
+    grid-area: carruselDos;
+}
+section img{
+    height: 100px;
+    width: 140px;
+}
+.carrusel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.5rem;
+}
+.seccionesCarrusel{
+    display: flex;
+    justify-content: left;
+}
+.seccionTexto{
+    padding: 0.5rem 0.5rem;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: white;
+}
+.seccionTexto h4{
+    font-size: 14px;
+    font-style: normal;
+}
+.seccionTexto a{
+    color: grey;
+    text-decoration: none;
+    font-size: 14px;
+}
+aside{
+    background-color: rgb(6, 17, 33);
+    grid-area: aside;
+}
+aside h2{
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+    color: white;
+    font-size: 1rem;
+}
+.carruselVideo{
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+footer{
+    background-color: rgb(6, 17, 33);
+    grid-area: footer;
+}
+.pieDePagina{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    width: 100%;
+    height: 6.5rem;
+    margin-top: 1rem;
+}
+.pieDePagina div ul li a:hover{
+    color: grey;
+}
+.pieDePaginaRedes{
+    display: flex;
+    gap: 1rem;
+}
+.pieDePagina h5{
+    font-size: 1rem;
+}
+.pieDePagina ul li a{
+    text-decoration: none;
+    color: white;
+}
+.pieDePagina ul{
+    list-style-type: none;
+}
+footer p{
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
+ol, ul {
+    padding-left: 0rem;
+}
+.seccionMonedas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.monedaUno{
+    display: flex;
+    background-color: white;
+    color: black;
+    gap: 1rem;
+    height: 100px;
+    width: 160px;
+    border-radius: 5px;
+    align-items: center;
+}
+.monedaBtc{
+    color: gray;
+}
+.monedaParteUno{
+    margin-left: 0.5rem;
+}
+.monedaParteUno h4{
+    margin-top: 0.4rem;
+    font-size: 1rem;
+}
+.monedaParteUno img{
+    height: 25px;
+    width: 25px;
+}
+.monedaBtcPorcentaje{
+    color: green;
+    margin-left: 0.4rem;
+}
+.monedaBtcPorcentajeBajo{
+    color: red;
+    margin-left: 0.4rem;
+}
+.tabla-crypto-price{
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    width: 100%;
+    font-weight: 550;
+}
+.tabla-crypto-price tr a{
+    color: black;
+    text-decoration: none;
+    font-style: oblique;
+}
+.btn{
+    background-color: none;
+}
+.tabla-crypto-price tr span{
+    color: gray;
+}
+.prueba{
+    display: flex;
+}
+.numero-top{
+    margin-top: 0.5rem;
+}
+.crypto-bajada{
+    color: red;
+}
+.crypto-subida{
+    color: green;
+}
+.moneda-tabla{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.imagen-logo-de-monedas{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+}
+.topCryptoTitulo{
+    color: white;
+    font-size: medium;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.informacionCrypto{
+    display: flex;
+    justify-content: center;
+    color: white;
+    grid-area: section;
+    margin-top: 1rem;
+}
+.informacionCryptoTexto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 300px;
+    text-align: center;
+    gap: 1rem;
+}
+.contenedorImagenEstadistica{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.contenedorImagenEstadistica img{
+    width: 300px;
+    height: 360px;
+}
+.carruselVideoDos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.carruselVideoYoutube{
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.contenedorNFT{
+    height: 80vh;
+    display: grid;
+
+    grid-template-areas: 
+    "section section section"
+    "footer footer footer"
+    ;
+}
+.contenedorNosotros{
+    height: 80vh;
+    display: grid;
+
+    grid-template-areas: 
+    "section section section"
+    "main main main"
+    "footer footer footer"
+    ;
+}
+.contenedorPerfiles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.textoParaMartin{
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+    height: 100px;
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 60rem;
+    gap: 3rem;
+}
+.contenedorContacto{
+    height: 80vh;
+    display: grid;
+
+    grid-template-areas:
+    "main main main"
+    "footer footer footer"
+    ;
+}
+.form-label{
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+.container-form{
+    margin-top: 2rem;
+}
+.container-form h1{
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 3re;
+}
+.boton-enviar{
+    margin-top: 1rem;
+}
+.btn{
+    background-color: white;
+    color: gray;
+}
+.imagen-contacto-redes{
+    height: 45px;
+    width: 45px;
+}
+.contenedor-imagen-consulta{
+    display: none;
+}
+
+.texto-h1{
+    color: white;
+    text-align: start;
+}
+.redes-del-footer img, .redes-del-footer2 img{
+width: 15px;
+height: 15px;
+}
+.redes-del-footer2{
+    margin-top: 0.5rem;
+}
+.imagen-contactanos{
+    height: 100%;
+    width: 100%;
+}
+.contenedor-formulario{
+    margin-bottom: 3rem;
+}
+.text-reset{
+    text-decoration: 0;
+}
+.footer-no-wrap{
+    flex-wrap: nowrap;
+}
+.footer-separado{
+    gap: 0rem;
+}
+.h1-ultima-linea{
+    background-color: black;
+    height: 2rem;
+}
+.h1-ultima-linea, h1{
+    padding-top: 3px;
+    font-size: 1rem;
+
+}
+.coneccionComunidadDiscord{
+    width: 100%;
+    height: 45rem;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.imagenMobileColeccion{
+    width: 100%;
+    height: 100%;
+}
+.leyendaDeDiscord{
+    text-align: start;
+    margin-left: 1rem;
+    color: white;
+}
+.h3small{
+    font-size: 1rem;
+}
+.botonDiscord{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    background-color: rgb(231, 213, 17);
+    border-radius: 20px;
+    padding: 15px 30px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.imagenDiscordBoton{
+    height: 15px;
+    width: 15px;
+    margin-bottom: 0.2rem;
+}
+.leyendaDeDiscord a{
+    margin-top: 5rem;
+}
+.contenedorNft{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.cardNft{
+    background-color: rgb(49, 49, 49);
+    width: 320px;
+    height: 300px;
+    border-radius: 15px;
+}
+.imagenNft{
+    background-color: gray;
+    height: 170px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+.imagenNft1{
+    background-image: url(../img/bearcolection.png);
+}
+.imagenNft2{
+    background-image: url(../img/cowcolection.png);
+}
+.imagenNft3{
+    background-image: url(../img/honeycolection.png);
+}
+.coleccionesRecomendadas{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+.cardNft h2{
+    font-size: 1rem;
+}
+.cardNft h2, .cardNft p{
+    color: white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.cardNft p{
+    font-size: 0.8rem;
+}
+.cardNft h2 img{
+    width: 15px;
+    height: 15px;
+}
+@media screen and (min-width: 525px){
+    .coneccionComunidadDiscord{
+        height: 55rem;
+    }
+}
+@media screen and (min-width: 768px){
+
+    .logotipoGrande{
+        display: block;
+        width: 15rem;
+        height: 2rem;
+    }
+    .logotipoChico{
+        display: none;
+    }
+    .contenedorIndex{
+        height: 100vh;
+        grid-template-areas: 
+        "main main main"
+        "section section aside"
+        "footer footer footer"
+        ;
+    }
+    .carruselVideo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    aside h2{
+        margin: 0.5rem 0rem 0.5rem 0rem;
+        font-size: large;
+    }
+    .videos iframe{
+        width: 300px;
+        height: 170px;
+        border: 0;
+    }
+    .pieDePagina{
+        justify-content: space-evenly;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .pieDePagina h5{
+        font-size: 1.2rem;
+    }
+    section img{
+        height: 200px;
+        width: 280px;
+    }
+    .navegador{
+        justify-content: space-around;
+    }
+    .seccionTexto{
+        padding: 0.5rem 0.5rem;
+        font-size: 1.5rem;
+    }
+    .seccionTexto h4{
+        font-size: 1.2rem;
+        font-style: normal;
+    }
+    .seccionTexto a{
+        font-size: 1.4rem;
+    }
+    .pieDePagina ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+
+    }
+    .informacionCryptoTexto{
+        width: 600px;
+        gap: 2rem;
+    }
+    .contenedorImagenEstadistica img{
+        width: 600px;
+        height: 720px;
+    }
+    .carruselVideoDos{
+        background-color: rgb(6, 17, 33);
+        grid-area: asideDos;
+    }
+    .carruselVideoYoutube{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .videosEnCrypto iframe{
+        width: 230px;
+        height: 120px;
+        border: 0;
+    }
+    .carruselVideoDos h2{
+        text-align: center;
+        font-size: 1.7rem;
+    }
+    .informacionCryptoTexto div h2{
+        font-size: 1.7rem;
+    }
+    .informacionCryptoTexto div p{
+        font-size: 1.3rem;
+    }
+    .topCryptoTitulo{
+        font-size: 1.7rem;
+    }
+    .contenedorVideoNFT iframe{
+        width: 535px;
+        height: 300px;
+    }
+    .contenedorPerfiles{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0rem;
+    }
+    .textoParaMartin{
+        height: 120px;
+    }
+    .container-form{
+        max-width: 512px;
+    }
+    .contenedor-imagen-consulta{
+        display: flex;
+    }
+    .contenedor-redes-icons{
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+    }
+    .footer-separado{
+        gap: 3rem;
+    }
+    .tabla-crypto-price{
+        margin-top: 1rem;
+        font-size: 1rem;
+        width: 90%;
+        font-weight: 550;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+@media screen and (min-width: 1024px){
+    .contenedorIndex{
+        grid-template-areas:
+        "main main main"
+        "section section aside"
+        "carruselDos carruselDos aside"
+        "footer footer footer"
+        ;
+    }
+    .carruselDos{
+        display: block;
+        background-color: rgb(6, 17, 33);
+        grid-area: carruselDos;
+        text-align: center;
+    }
+    .carruselDos a img{
+        height: 280px;
+        width: 488px;
+    }
+    .carruselDos h2{
+        margin: 0.5rem 0rem 0.5rem 0rem;
+        font-size: large;
+        color: white;
+    }
+    .seccionesCarruselDos{
+        display: flex;
+        justify-content: center;
+    }
+    .seccionesCarrusel{
+        display: flex;
+        justify-content: center;
+    }
+    .seccionTexto{
+        padding: 0.5rem 0.5rem;
+        font-size: 1.5rem;
+        width: 13rem;
+    }
+    #fondo{
+        width: 100%;
+        height: 50rem;
+        background-image: url(../img/bannerPrincipal.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .textoBienvenida{
+        text-align: center;
+        color: white;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+    }
+    .botonBienvenida{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 800;
+        background-color: white;
+        border-radius: 20px;
+        padding: 15px 40px;
+        color: black;
+        text-decoration: none;
+    }
+    .navegador{
+        height: 60px;
+        justify-content: space-evenly;
+    }
+    .menu{
+        gap: 3rem;
+    }
+    .carruselVideoYoutube{
+        gap: 2rem;
+    }
+    .videosEnCrypto iframe{
+        width: 340px;
+        height: 190px;
+    }
+    .carruselVideoDos h2{
+        text-align: center;
+        font-size: 1.7rem;
+    }
+    .informacionCryptoTexto div h2{
+        font-size: 2.3rem;
+    }
+    .informacionCryptoTexto div p{
+        font-size: 1.5rem;
+    }
+    .topCryptoTitulo{
+        font-size: 1.5rem;
+    }
+    .contenedorImagenEstadistica img{
+        width: 600px;
+        height: 720px;
+    }
+    .carruselVideoDos{
+        background-color: rgb(6, 17, 33);
+        grid-area: asideDos;
+    }
+    .seccionMonedas{
+        gap: 2rem;
+    }
+    .informacionCrypto{
+        padding-top: 2rem;
+    }
+    .informacionCryptoTexto{
+        justify-content: center;
+        width: 1000px;
+    }
+    .contenedorImagenEstadistica{
+        align-items: center;
+    }
+    .contenedorVideoNFT iframe{
+        width: 560px;
+        height: 315px;
+    }
+    .contenedorPerfiles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0rem;
+    }
+    .textoParaMartin{
+        height: 120px;
+    }
+    .container-form{
+        max-width: 812px;
+    }
+    .footer-separado{
+        gap: 5rem;
+    }
+    .coneccionComunidadDiscord{
+        width: 100%;
+        height: 40rem;
+        background-color: rgb(24, 24, 24);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .coleccionesRecomendadas{
+        font-size: 1.5rem;
+    }
+}
+.pagina-nft{
+    background-color: $color-principal;
+    .bg-menu-color{
+        background-color: $color-principal;
+        a{
+            color: $color-font-navegador;
+        }
+    }
+    footer{
+        background-color: $color-principal;
+        div{
+            color: $color-font-footer;
+            ul{
+                li{
+                    a{
+                        color: $color-font-footer;
+                    }
+                }
+            }
+        }
+        p{
+            color: $color-font-copyright;
+        }
+    }
+}
