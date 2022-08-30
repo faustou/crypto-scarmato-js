@@ -1,28 +1,130 @@
-@import "utilities/variables.scss";
+@import "base/variables.scss";
+@import "base/mapas";
+@import "base/mixin";
+@import "base/extend";
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+@font-face{
+    font-family: "cubi";
+    src: local("Cube"), url(../assets/fonts/Cube.ttf)
+}
+@font-face{
+    font-family: "technoBold";
+    src: local("techno_hideo_bold"), url(../assets/fonts/techno_hideo_bold.ttf);
+}
+@font-face {
+    font-family: "fullpack";
+    src: local("Full_Pack_2015"), url(../assets/fonts/full-pack.ttf);
+}
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(6, 17, 33);
+    background-color: $color-principal;
     
 }
 .contenedorIndex{
-    height: 80vh;
     display: grid;
-
-    grid-template-areas: 
-    "main main main"
-    "section section section"
-    "aside aside aside"
-    "footer footer footer"
+    grid-template-areas:
+    "sectionIndex"
+    "asideIndex"
     ;
+    .asideIndex{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 1rem;
+        grid-area: asideIndex;
+    }
+    .carrusel{
+        height: 100%;
+        grid-area: sectionIndex;
+    }
 }
+// empiza sass
+.pagina-nft{
+    background-color: map-get($map: $principal, $key: color-principal); // ejemplo de map
+    .bg-menu-color{
+        background-color: $color-principal;
+        a{
+            color: $color-font-navegador;
+        }
+    }
+    footer{
+        background-color: $color-principal;
+        div{
+            color: $color-font-footer;
+            ul{
+                li{
+                    a{
+                        color: $color-font-footer;
+                    }
+                }
+            }
+        }
+        p{
+            color: $color-font-copyright;
+        }
+    }
+}
+
+.imgMobileIndex{
+    @include medidas(98%, 98%); //ejemplo de mixin
+}
+.pagina-index{
+    main{
+        .textoMasBoton{
+            @extend %margenIzquierdo; //ejemplo de extend
+            width: 200px;
+        }
+        div{
+            .imgMobileIndex{
+                width: 180px;
+                height: 140px;
+                display: none;
+            }
+            .botonesInicio{
+                flex-direction: column;
+                margin-top: 2rem;
+                align-items: start;
+                display: flex;
+                
+                gap: 0.5rem;
+                .botonBienvenidaDos{
+                    display: flex;
+                    gap: 0.5rem;
+                }
+            }
+        }
+        .bubbleMasScroll{
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            .scrollDownFlex{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+                h4{
+                    transform: rotate(270deg);
+                    color: white;
+                    font-size: 10px;
+                    margin-bottom: 2rem;
+                    width: 60px;
+                }
+        }
+        .bubbleInicio{
+            display: none;
+            margin-top: 3rem;
+            @include medidas(80px, 60px); // ejemplo de mixin
+        }
+    }
+}
+// termina sass
 .navegador{
-    background-color: rgb(6, 17, 33);
+
     grid-area: header;
     height: 100px;
     display: flex;
@@ -34,9 +136,6 @@ body{
     display: flex;
     gap: 1rem;
     list-style-type: none;
-}
-.bg-menu-color{
-    background-color: rgb(6, 17, 33);
 }
 .nav-item a{
     color: gray;
@@ -51,7 +150,7 @@ body{
     color: white;
 }
 .dropdown-menu{
-    background-color: rgb(6, 17, 33);
+    background-color: $color-principal;
 }
 .menu li a{
     font-size: small;
@@ -67,48 +166,78 @@ header img{
     display: none;
 }
 main{
-    background-color: rgb(6, 17, 33);
     grid-area: main;
 }
 .primerBloque{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: row;
+    margin-right: 1rem;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 #fondo{
     width: 100%;
-    height: 40rem;
-    background-image: url(../img/bannerPrincipal.png);
+    height: 35rem;
+    background-image: url(../img/fondocryptoiniciodos.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+
+}
+#fondoDos{
+    /*
+    width: 100%;
+    height: 35rem; */
+    background-image: url(../img/fondocryptoiniciogrid.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .textoBienvenida{
+    margin-top: 3rem;
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
+    font-family: "fullpack";
+    line-height: 3.2rem;
+    text-shadow: 0 0 5px $color-secuandario-dos, 0 0 15px $color-secuandario-dos, 0 0 30px $color-secuandario-dos, 0 0 50px $color-secuandario-dos;
 }
 .botonBienvenida{
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    background-color: white;
+    font-weight: 500;
+    font-size: 0.7rem;
+    border: 0.5px solid $color-secuandario-uno;
     border-radius: 20px;
-    padding: 10px 30px;
-    color: black;
+    padding: 15px 20px;
+    color: white;
     text-decoration: none;
 }
-.carrusel{
-    background-color: rgb(6, 17, 33);
-    grid-area: section;
+.botonBienvenidaDos{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background-color: $color-secuandario-dos;
+    border-radius: 20px;
+    padding: 15px 35px;
+    color: white;
+    text-decoration: none;
+    align-items: center;
 }
-.carruselDos{
-    display: none;
-    background-color: rgb(6, 17, 33);
-    grid-area: carruselDos;
+.botonBienvenidaTres{
+    border-radius: 30px;
+    border: 0.5px solid $color-secuandario-uno;
+    padding: 10px 13px;
+    text-decoration: none;
+    width: 50px;
+    img{
+        height: 15px;
+        width: 20px;
+    }
+}
+.botonBienvenidaDos:hover{
+    color: gray;
+}
+.botonBienvenida:hover{
+    color: gray;
 }
 section img{
     height: 100px;
@@ -123,9 +252,10 @@ section img{
 }
 .seccionesCarrusel{
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
 .seccionTexto{
+    width: 230px;
     padding: 0.5rem 0.5rem;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
@@ -141,10 +271,6 @@ section img{
     text-decoration: none;
     font-size: 14px;
 }
-aside{
-    background-color: rgb(6, 17, 33);
-    grid-area: aside;
-}
 aside h2{
     margin: 0.5rem 0rem 0.5rem 0.5rem;
     color: white;
@@ -152,11 +278,12 @@ aside h2{
 }
 .carruselVideo{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 0.4rem;
 }
 footer{
-    background-color: rgb(6, 17, 33);
+    background-color: $color-principal;
     grid-area: footer;
 }
 .pieDePagina{
@@ -187,7 +314,7 @@ footer{
 }
 footer p{
     width: 100%;
-    background-color: black;
+    background-color: $color-principal;
     color: white;
     text-align: center;
     padding-top: 5px;
@@ -204,7 +331,7 @@ ol, ul {
 .monedaUno{
     display: flex;
     background-color: white;
-    color: black;
+    color: $color-principal;
     gap: 1rem;
     height: 100px;
     width: 160px;
@@ -240,7 +367,7 @@ ol, ul {
     font-weight: 550;
 }
 .tabla-crypto-price tr a{
-    color: black;
+    color: $color-principal;
     text-decoration: none;
     font-style: oblique;
 }
@@ -423,11 +550,11 @@ height: 15px;
 .footer-separado{
     gap: 0rem;
 }
-.h1-ultima-linea{
-    background-color: black;
+.h3-ultima-linea{
+    background-color: $color-principal;
     height: 2rem;
 }
-.h1-ultima-linea, h1{
+.h3-ultima-linea, h3{
     padding-top: 3px;
     font-size: 1rem;
 
@@ -435,7 +562,7 @@ height: 15px;
 .coneccionComunidadDiscord{
     width: 100%;
     height: 45rem;
-    background-color: rgb(24, 24, 24);
+    background-color: $color-principal;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -479,7 +606,7 @@ height: 15px;
     margin-bottom: 1rem;
 }
 .cardNft{
-    background-color: rgb(49, 49, 49);
+    background-color: $color-secuandario-dos;
     width: 320px;
     height: 300px;
     border-radius: 15px;
@@ -521,14 +648,66 @@ height: 15px;
     width: 15px;
     height: 15px;
 }
+@media screen and (min-width: 400px){
+    .primerBloque{
+        margin-right: 1rem;
+       justify-content: space-between;
+    }
+}
+@media screen and (min-width: 450px){
+    .primerBloque{
+       justify-content: center;
+       gap: 5rem;
+    }
+}
+
 @media screen and (min-width: 525px){
     .coneccionComunidadDiscord{
         height: 55rem;
     }
 }
+@media screen and (min-width: 600px){
+    .pagina-index{
+        main{
+            .bubbleMasScroll{
+                gap: 4rem;
+            }
+            .textoMasBoton{
+                margin-left: 2rem;
+                .botonesInicio{
+                    flex-direction: row;
+                }
+            }
+            .bubbleInicio{
+                display: block;
+                margin-top: 3rem;
+                width: 120px;
+                height: 100px;
+            }
+        }
+    }
+}
 @media screen and (min-width: 768px){
 
-    .logotipoGrande{
+    .pagina-index{
+        main{
+            .flexImgMobile{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 1rem;
+                width: 240px;
+                height: 290px;
+                margin-top: 2rem;
+                .imgMobileIndex{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    .imgMobileIndex {
         display: block;
         width: 15rem;
         height: 2rem;
@@ -536,18 +715,11 @@ height: 15px;
     .logotipoChico{
         display: none;
     }
-    .contenedorIndex{
-        height: 100vh;
-        grid-template-areas: 
-        "main main main"
-        "section section aside"
-        "footer footer footer"
-        ;
-    }
     .carruselVideo{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-right: 0.5rem;
         gap: 1rem;
     }
     aside h2{
@@ -599,10 +771,6 @@ height: 15px;
         width: 600px;
         height: 720px;
     }
-    .carruselVideoDos{
-        background-color: rgb(6, 17, 33);
-        grid-area: asideDos;
-    }
     .carruselVideoYoutube{
         display: flex;
         justify-content: center;
@@ -617,7 +785,7 @@ height: 15px;
         text-align: center;
         font-size: 1.7rem;
     }
-    .informacionCryptoTexto div h2{
+    .informacionCryptoTexto div h1{
         font-size: 1.7rem;
     }
     .informacionCryptoTexto div p{
@@ -662,29 +830,42 @@ height: 15px;
     }
 
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 800px){
     .contenedorIndex{
+        grid-template-columns: 1fr;
         grid-template-areas:
-        "main main main"
-        "section section aside"
-        "carruselDos carruselDos aside"
-        "footer footer footer"
+        "sectionIndex asideIndex"
         ;
     }
-    .carruselDos{
-        display: block;
-        background-color: rgb(6, 17, 33);
-        grid-area: carruselDos;
-        text-align: center;
+    .primerBloque{
+        justify-content: space-between;
+        gap: 5rem;
+     }
+}
+@media screen and (min-width: 1024px){
+    .pagina-index{
+        .primerBloque{
+            align-items: center;
+            height: 37rem;
+            justify-content: center;
+            gap: 5rem;
+            .textoMasBoton{
+                width: 420px;
+            }
+            .flexImgMobile{
+                align-items: center;
+            }
+        }
     }
-    .carruselDos a img{
-        height: 280px;
-        width: 488px;
-    }
-    .carruselDos h2{
-        margin: 0.5rem 0rem 0.5rem 0rem;
-        font-size: large;
-        color: white;
+    .contenedorIndex{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "sectionIndex asideIndex"
+        ;
+        .carrusel{
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
     .seccionesCarruselDos{
         display: flex;
@@ -700,28 +881,25 @@ height: 15px;
         width: 13rem;
     }
     #fondo{
-        width: 100%;
         height: 50rem;
-        background-image: url(../img/bannerPrincipal.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
     .textoBienvenida{
         text-align: center;
         color: white;
-        font-size: 3rem;
+        font-size: 4rem;
+        line-height: 4.1rem;
         text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
     }
     .botonBienvenida{
         font-family: 'Roboto', sans-serif;
         font-weight: 800;
-        background-color: white;
         border-radius: 20px;
         padding: 15px 40px;
-        color: black;
+        color: white;
         text-decoration: none;
+    }
+    .botonBienvenidaDos{
+        padding: 15px 60px;
     }
     .navegador{
         height: 60px;
@@ -753,10 +931,6 @@ height: 15px;
     .contenedorImagenEstadistica img{
         width: 600px;
         height: 720px;
-    }
-    .carruselVideoDos{
-        background-color: rgb(6, 17, 33);
-        grid-area: asideDos;
     }
     .seccionMonedas{
         gap: 2rem;
@@ -793,7 +967,7 @@ height: 15px;
     .coneccionComunidadDiscord{
         width: 100%;
         height: 40rem;
-        background-color: rgb(24, 24, 24);
+        background-color: $color-principal;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -804,28 +978,18 @@ height: 15px;
         font-size: 1.5rem;
     }
 }
-.pagina-nft{
-    background-color: $color-principal;
-    .bg-menu-color{
-        background-color: $color-principal;
-        a{
-            color: $color-font-navegador;
-        }
-    }
-    footer{
-        background-color: $color-principal;
-        div{
-            color: $color-font-footer;
-            ul{
-                li{
-                    a{
-                        color: $color-font-footer;
-                    }
-                }
+@media screen and (min-width: 1100px){
+    .pagina-index{
+        .primerBloque{
+            justify-content: space-around;
+            .textoMasBoton{
+                width: 420px;
             }
-        }
-        p{
-            color: $color-font-copyright;
+            .flexImgMobile{
+                align-items: center;
+                width: 400px;
+                height: 400px;
+            }
         }
     }
 }
