@@ -25,6 +25,7 @@ body{
     background-color: $color-principal;
     
 }
+// empiza sass
 .contenedorIndex{
     display: grid;
     grid-template-areas:
@@ -39,11 +40,473 @@ body{
         grid-area: asideIndex;
     }
     .carrusel{
-        height: 100%;
         grid-area: sectionIndex;
     }
 }
-// empiza sass
+.pagina-index{
+    #fondo{
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/fondocryptoiniciodos.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        main{
+            display: flex;
+            flex-direction: row;
+            margin-right: 1rem;
+            justify-content: space-between;
+            .textoMasBoton{
+                @extend %margenIzquierdo; //ejemplo de extend
+                width: 200px;
+                .textoBienvenida{
+                    margin-top: 3rem;
+                    text-align: center;
+                    color: white;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                    font-family: "fullpack";
+                    line-height: 3.2rem;
+                    text-shadow: 0 0 5px $color-secuandario-dos, 0 0 15px $color-secuandario-dos, 0 0 30px $color-secuandario-dos, 0 0 50px $color-secuandario-dos;
+                }
+            }
+            div{
+                .imgMobileIndex{
+                    width: 180px;
+                    height: 140px;
+                    display: none;
+                }
+                .botonesInicio{
+                    flex-direction: column;
+                    margin-top: 2rem;
+                    align-items: start;
+                    display: flex;
+                    
+                    gap: 0.5rem;
+                    .botonBienvenida{
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 800;
+                        font-size: 0.9rem;
+                        border: 0.5px solid $color-secuandario-uno;
+                        border-radius: 20px;
+                        padding: 15px 20px;
+                        color: $color-fuente-principal;
+                        text-decoration: none;
+                    }
+                    .botonBienvenidaDos{
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 0.9rem;
+                        font-weight: 800;
+                        background-color: $color-secuandario-dos;
+                        border-radius: 20px;
+                        padding: 15px 20px;
+                        color: $color-fuente-principal;
+                        text-decoration: none;
+                        align-items: center;
+                        display: flex;
+                        gap: 0.5rem;
+                    }
+                    .botonBienvenidaDos:hover{
+                        color: $color-fuente-hover;
+                    }
+                    .botonBienvenida:hover{
+                        color: $color-fuente-hover;
+                    }
+                }
+            }
+            .flexImgMobile{
+                .imgMobileIndex{
+                    @include medidas(98%, 98%); //ejemplo de mixin
+                }
+            }
+            .bubbleMasScroll{
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                .scrollDownFlex{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .botonBienvenidaTres{
+                        border-radius: 30px;
+                        border: 0.5px solid $color-secuandario-uno;
+                        padding: 10px 13px;
+                        text-decoration: none;
+                        width: 50px;
+                        img{
+                            height: 15px;
+                            width: 20px;
+                        }
+                    }
+                }
+                    h4{
+                        transform: rotate(270deg);
+                        color: $color-fuente-principal;
+                        font-size: 10px;
+                        margin-bottom: 2rem;
+                        width: 60px;
+                    }
+            }
+            .bubbleInicio{
+                display: none;
+                margin-top: 3rem;
+                @include medidas(80px, 60px); // ejemplo de mixin
+            }
+        }
+    }
+    .bloqueCards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        color: $color-fuente-principal;
+        font-family: 'Righteous';
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/fondocryptoiniciotres.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .cardPackStandar{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 2rem;
+            height: 35rem;
+            width: 20rem;
+            border-radius: 1.3rem;
+            background: rgba(35, 53, 249, 0.163);
+            border-style: solid;
+            border-width: 3px;
+            border-color: rgba(35, 53, 249, 0.163);
+            h2{
+                font-weight: lighter;
+                font-size: 3rem;
+                color: $color-secuandario-dos;
+                margin-left: 2rem;
+            }
+            h5{
+                font-size: 3rem;
+                color: $color-fuente-principal;
+                margin-right: 4rem;
+            }
+            .leyendaCentral{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: start;
+                h5{
+                    text-align: start;
+                    margin: 0 1rem 0 1rem;
+                    font-size: 1.1rem;
+                    font-style: bold;
+                    font-family: 'Bebas Neue', cursive;
+                }
+                p{
+                    margin: 0 1rem 0 1rem;
+                    font-size: 0.9rem;
+                }
+            }
+            .precioStandar{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.3rem;
+                .priceGrande{
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    color: $color-secuandario-dos;
+                }
+                .priceChico{
+                    font-size: 1rem;
+                    margin-bottom: 0.4rem;
+                    font-weight: bold;
+                    span{
+                        font-size: 2.3rem;
+                    }
+                }
+            }
+        }
+        .botonCard{
+            .botonCardUno{
+                font-family: 'Roboto', sans-serif;
+                font-size: 0.9rem;
+                font-weight: 800;
+                background: rgba(20, 39, 248, 0.1);
+                border-radius: 20px;
+                padding: 15px 45px;
+                color: $color-fuente-principal;
+                text-decoration: none;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+        .cardPackPremium{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            gap: 2rem;
+            height: 35rem;
+            width: 20rem;
+            border-radius: 1.3rem;
+            background: rgba(241, 1, 96, 0.163);
+            border-style: solid;
+            border-width: 3px;
+            border-color: rgba(241, 1, 96, 0.163);
+            h2{
+                font-weight: lighter;
+                font-size: 3rem;
+                color: $color-secuandario-uno;
+                margin-left: 2rem;
+            }
+            h5{
+                font-size: 3rem;
+                color: $color-fuente-principal;
+                margin-right: 4rem;
+            }
+            .leyendaCentral{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: start;
+                h5{
+                    text-align: start;
+                    margin: 0 1rem 0 1rem;
+                    font-size: 1.1rem;
+                    font-style: bold;
+                    font-family: 'Bebas Neue', cursive;
+                }
+                p{
+                    margin: 0 1rem 0 1rem;
+                    font-size: 0.9rem;
+                }
+            }
+            .precioPremium{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.3rem;
+                .priceGrande{
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    color: $color-secuandario-uno;
+                }
+                .priceChico{
+                    font-size: 1rem;
+                    margin-bottom: 0.4rem;
+                    font-weight: bold;
+                    span{
+                        font-size: 2.3rem;
+                    }
+                }
+            }
+            .botonCard{
+                .botonCardDos{
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 0.9rem;
+                    font-weight: 800;
+                    background: rgba(241, 1, 96, 0.163);
+                    border-radius: 20px;
+                    padding: 15px 45px;
+                    color: $color-fuente-principal;
+                    text-decoration: none;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+            }
+        }
+    }
+    #fondoDos{
+        /*
+        width: 100%;
+        height: 35rem; */
+        background-image: url(../img/fondocryptoiniciogrid.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        section img{
+            height: 100px;
+            width: 150px;
+        }
+        .carrusel{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0.5rem;
+            .seccionesCarrusel{
+                display: flex;
+                justify-content: center;
+                .seccionTexto{
+                    width: 180px;
+                    padding: 0.5rem 0.5rem;
+                    font-size: 15px;
+                    font-family: 'Roboto', sans-serif;
+                    font-style: italic;
+                    color: $color-fuente-principal;
+                    h4{
+                        font-size: 14px;
+                        font-style: normal;
+                    }
+                    a{
+                        color: grey;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .asideIndex{
+        h2{
+            margin: 0.5rem 0rem 0.5rem 0.5rem;
+            color: $color-fuente-principal;
+            font-size: 1rem;  
+        }
+        .carruselVideo{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+    }
+}
+.contenedorCrypto{
+    main{
+        .topCryptoTitulo{
+            color: $color-fuente-principal;
+            font-size: medium;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .seccionMonedas{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            .monedaUno{
+                display: flex;
+                background-color: $color-fuente-principal;
+                color: $color-principal;
+                gap: 1rem;
+                height: 100px;
+                width: 160px;
+                border-radius: 5px;
+                align-items: center;
+                .monedaParteUno{
+                    margin-left: 0.5rem;
+                    .monedaBtc{
+                        color: $color-fuente-hover;
+                    }
+                    h4{
+                        margin-top: 0.4rem;
+                        font-size: 1rem;
+                    }
+                    img{
+                        height: 25px;
+                        width: 25px;
+                    }
+                    .monedaBtcPorcentaje{
+                        color: $color-green-estadistica;
+                        margin-left: 0.4rem;
+                    }
+                    .monedaBtcPorcentajeBajo{
+                        color: $color-red-estadistica;
+                        margin-left: 0.4rem;
+                    }
+                }
+            }
+        }
+    }
+    section{
+        margin-top: 1rem;
+        font-size: 0.7rem;
+        width: 100%;
+        font-weight: 550;
+        div{
+            .moneda-tabla{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    a{
+                        color: $color-principal;
+                        text-decoration: none;
+                        font-style: oblique;
+                    }
+            }
+            tr span{
+                color: gray;
+            }
+        }
+        .btn{
+            background-color: none;
+        }
+        .numero-top{
+            margin-top: 0.5rem;
+        }
+        .crypto-bajada{
+            color: $color-red-estadistica;
+        }
+        .crypto-subida{
+            color: $color-green-estadistica;
+        }
+        .imagen-logo-de-monedas{
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            margin-top: 0.4rem;
+        }
+    }
+    .informacionCrypto{
+        display: flex;
+        justify-content: center;
+        color: $color-fuente-principal;
+        margin-top: 1rem;
+        .informacionCryptoTexto{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            text-align: center;
+            align-items: center;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            gap: 1rem;
+            p{
+                font-size: 1rem;
+            }
+            .contenedorImagenEstadistica{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                img{
+                    width: 300px;
+                    height: 360px;
+                }
+            }    
+        }   
+    }
+    .carruselVideoDos, .asideIndex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.4rem;
+        h2{
+            color: $color-fuente-principal;
+            text-align: center;
+        }
+        .carruselVideoYoutube, {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+    }
+}
 .pagina-nft{
     background-color: map-get($map: $principal, $key: color-principal); // ejemplo de map
     .bg-menu-color{
@@ -52,91 +515,162 @@ body{
             color: $color-font-navegador;
         }
     }
+    .coleccionesRecomendadas{
+        display: flex;
+        justify-content: center;
+        color: $color-fuente-principal;
+        font-size: 1.2rem;
+    }
+    .contenedorNft{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        .cardNft{
+            background-color: $color-secuandario-dos;
+            width: 320px;
+            height: 300px;
+            border-radius: 15px;
+            h2{
+                font-size: 1rem;
+                img{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            h2, p{
+                color: $color-fuente-principal;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            p{
+                font-size: 0.8rem;
+            }
+            .imagenNft{
+                background-color: gray;
+                height: 170px;
+                margin-bottom: 1rem;
+                background-size: contain;
+                border-radius: 15px 15px 0 0;
+            }
+            .imagenNft1{
+                background-image: url(../img/bearcolection.png);
+            }
+            .imagenNft2{
+                background-image: url(../img/cowcolection.png);
+            }
+            .imagenNft3{
+                background-image: url(../img/honeycolection.png);
+            }
+        }
+    }
+    .coneccionComunidadDiscord{
+        width: 98%;
+        height: 43rem;
+        background-color: $color-subPrincipal;
+        border-radius: 20px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        div{
+            .imagenMobileColeccion{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .leyendaDeDiscord{
+            text-align: start;
+            margin-left: 1rem;
+            color: $color-fuente-principal;
+            a{
+                margin-top: 5rem;
+            }
+            .h3small{
+                font-size: 1rem;
+            }
+            .botonDiscord{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 800;
+                background-color: rgb(231, 213, 17);
+                border-radius: 20px;
+                padding: 15px 30px;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }
+            .imagenDiscordBoton{
+                height: 15px;
+                width: 15px;
+                margin-bottom: 0.2rem;
+            }
+        }
+    }
+    .informacionCryptoNFT{
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        .informacionNFTTexto{
+            margin-left: 1rem;
+            margin-right: 1rem;
+            color: $color-fuente-principal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            width: 300px;
+        }
+    }
     footer{
         background-color: $color-principal;
         div{
-            color: $color-font-footer;
+            color: $color-fuente-principal;
             ul{
                 li{
                     a{
-                        color: $color-font-footer;
+                        color: $color-fuente-principal;
                     }
                 }
             }
         }
         p{
-            color: $color-font-copyright;
+            color: $color-fuente-principal;
         }
     }
 }
-
-.imgMobileIndex{
-    @include medidas(98%, 98%); //ejemplo de mixin
-}
-.pagina-index{
-    main{
-        .textoMasBoton{
-            @extend %margenIzquierdo; //ejemplo de extend
-            width: 200px;
-        }
-        div{
-            .imgMobileIndex{
-                width: 180px;
-                height: 140px;
-                display: none;
-            }
-            .botonesInicio{
-                flex-direction: column;
-                margin-top: 2rem;
-                align-items: start;
-                display: flex;
-                
-                gap: 0.5rem;
-                .botonBienvenidaDos{
-                    display: flex;
-                    gap: 0.5rem;
-                }
-            }
-        }
-        .bubbleMasScroll{
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: column;
-            .scrollDownFlex{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-                h4{
-                    transform: rotate(270deg);
-                    color: white;
-                    font-size: 10px;
-                    margin-bottom: 2rem;
-                    width: 60px;
-                }
-        }
-        .bubbleInicio{
-            display: none;
-            margin-top: 3rem;
-            @include medidas(80px, 60px); // ejemplo de mixin
-        }
+.contenedorNosotros{
+    .informacionNosotros{
+        text-align: center;
+    }
+    .informacionNosotrosTexto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        gap: 1rem;
+        color: $color-fuente-principal;
+    }
+    .contenedorPerfiles{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .textoParaMartin{
+        margin-top: 2rem;
+        text-align: center;
+        color: $color-fuente-principal;
+        height: 100px;
     }
 }
 // termina sass
-.navegador{
-
-    grid-area: header;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
-}
-.menu{
-    display: flex;
-    gap: 1rem;
-    list-style-type: none;
-}
+// EMPIEZA EL HEADER GLOBAL
 .nav-item a{
     color: gray;
 }
@@ -165,149 +699,36 @@ header img{
 .logotipoGrande{
     display: none;
 }
-main{
-    grid-area: main;
-}
-.primerBloque{
-    display: flex;
-    flex-direction: row;
-    margin-right: 1rem;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-#fondo{
-    width: 100%;
-    height: 35rem;
-    background-image: url(../img/fondocryptoiniciodos.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-#fondoDos{
-    /*
-    width: 100%;
-    height: 35rem; */
-    background-image: url(../img/fondocryptoiniciogrid.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.textoBienvenida{
-    margin-top: 3rem;
-    text-align: center;
-    color: white;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-family: "fullpack";
-    line-height: 3.2rem;
-    text-shadow: 0 0 5px $color-secuandario-dos, 0 0 15px $color-secuandario-dos, 0 0 30px $color-secuandario-dos, 0 0 50px $color-secuandario-dos;
-}
-.botonBienvenida{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 0.7rem;
-    border: 0.5px solid $color-secuandario-uno;
-    border-radius: 20px;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-}
-.botonBienvenidaDos{
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    background-color: $color-secuandario-dos;
-    border-radius: 20px;
-    padding: 15px 35px;
-    color: white;
-    text-decoration: none;
-    align-items: center;
-}
-.botonBienvenidaTres{
-    border-radius: 30px;
-    border: 0.5px solid $color-secuandario-uno;
-    padding: 10px 13px;
-    text-decoration: none;
-    width: 50px;
-    img{
-        height: 15px;
-        width: 20px;
-    }
-}
-.botonBienvenidaDos:hover{
-    color: gray;
-}
-.botonBienvenida:hover{
-    color: gray;
-}
-section img{
-    height: 100px;
-    width: 140px;
-}
-.carrusel{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 0.5rem;
-}
-.seccionesCarrusel{
-    display: flex;
-    justify-content: center;
-}
-.seccionTexto{
-    width: 230px;
-    padding: 0.5rem 0.5rem;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    color: white;
-}
-.seccionTexto h4{
-    font-size: 14px;
-    font-style: normal;
-}
-.seccionTexto a{
-    color: grey;
-    text-decoration: none;
-    font-size: 14px;
-}
-aside h2{
-    margin: 0.5rem 0rem 0.5rem 0.5rem;
-    color: white;
-    font-size: 1rem;
-}
-.carruselVideo{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.4rem;
-}
+// TERMINA EL HEADER GLOBAL
+// EMPIEZA FOOTER GLOBAL
 footer{
     background-color: $color-principal;
-    grid-area: footer;
 }
 .pieDePagina{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    color: white;
+    color: $color-fuente-principal;
     width: 100%;
     height: 6.5rem;
     margin-top: 1rem;
+    margin-left: 1rem;
 }
 .pieDePagina div ul li a:hover{
     color: grey;
 }
 .pieDePaginaRedes{
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
 }
 .pieDePagina h5{
     font-size: 1rem;
 }
 .pieDePagina ul li a{
     text-decoration: none;
-    color: white;
+    color: $color-fuente-principal;
 }
 .pieDePagina ul{
     list-style-type: none;
@@ -315,185 +736,18 @@ footer{
 footer p{
     width: 100%;
     background-color: $color-principal;
-    color: white;
+    color: $color-fuente-principal;
     text-align: center;
     padding-top: 5px;
 }
 ol, ul {
     padding-left: 0rem;
 }
-.seccionMonedas{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-.monedaUno{
-    display: flex;
-    background-color: white;
-    color: $color-principal;
-    gap: 1rem;
-    height: 100px;
-    width: 160px;
-    border-radius: 5px;
-    align-items: center;
-}
-.monedaBtc{
-    color: gray;
-}
-.monedaParteUno{
-    margin-left: 0.5rem;
-}
-.monedaParteUno h4{
-    margin-top: 0.4rem;
-    font-size: 1rem;
-}
-.monedaParteUno img{
-    height: 25px;
-    width: 25px;
-}
-.monedaBtcPorcentaje{
-    color: green;
-    margin-left: 0.4rem;
-}
-.monedaBtcPorcentajeBajo{
-    color: red;
-    margin-left: 0.4rem;
-}
-.tabla-crypto-price{
-    margin-top: 1rem;
-    font-size: 0.7rem;
-    width: 100%;
-    font-weight: 550;
-}
-.tabla-crypto-price tr a{
-    color: $color-principal;
-    text-decoration: none;
-    font-style: oblique;
-}
-.btn{
-    background-color: none;
-}
-.tabla-crypto-price tr span{
-    color: gray;
-}
-.prueba{
-    display: flex;
-}
-.numero-top{
-    margin-top: 0.5rem;
-}
-.crypto-bajada{
-    color: red;
-}
-.crypto-subida{
-    color: green;
-}
-.moneda-tabla{
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-}
-.imagen-logo-de-monedas{
-    width: 20px;
-    height: 20px;
-    margin-right: 0.5rem;
-    margin-top: 0.4rem;
-}
-.topCryptoTitulo{
-    color: white;
-    font-size: medium;
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-.informacionCrypto{
-    display: flex;
-    justify-content: center;
-    color: white;
-    grid-area: section;
-    margin-top: 1rem;
-}
-.informacionCryptoTexto{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 300px;
-    text-align: center;
-    gap: 1rem;
-}
-.contenedorImagenEstadistica{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-.contenedorImagenEstadistica img{
-    width: 300px;
-    height: 360px;
-}
-.carruselVideoDos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.4rem;
-}
-.carruselVideoYoutube{
-    display: flex;
-    justify-content: center;
-    gap: 0.4rem;
-}
-.contenedorNFT{
-    height: 80vh;
-    display: grid;
+// TERMINA FOOTER GLOBAL
 
-    grid-template-areas: 
-    "section section section"
-    "footer footer footer"
-    ;
-}
-.contenedorNosotros{
-    height: 80vh;
-    display: grid;
-
-    grid-template-areas: 
-    "section section section"
-    "main main main"
-    "footer footer footer"
-    ;
-}
-.contenedorPerfiles{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-.textoParaMartin{
-    margin-top: 2rem;
-    text-align: center;
-    color: white;
-    height: 100px;
-}
-.contacto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 60rem;
-    gap: 3rem;
-}
-.contenedorContacto{
-    height: 80vh;
-    display: grid;
-
-    grid-template-areas:
-    "main main main"
-    "footer footer footer"
-    ;
-}
+// CONTACTO CON BOOSTRAP
 .form-label{
-    color: white;
+    color: $color-fuente-principal;
     font-size: 1.3rem;
     margin-top: 1rem;
 }
@@ -504,7 +758,7 @@ ol, ul {
     margin-top: 2rem;
 }
 .container-form h1{
-    color: white;
+    color: $color-fuente-principal;
     font-size: 1.5rem;
     margin-bottom: 3re;
 }
@@ -512,7 +766,7 @@ ol, ul {
     margin-top: 1rem;
 }
 .btn{
-    background-color: white;
+    background-color: $color-fuente-principal;
     color: gray;
 }
 .imagen-contacto-redes{
@@ -523,8 +777,8 @@ ol, ul {
     display: none;
 }
 
-.texto-h1{
-    color: white;
+.texto-h2{
+    color: $color-fuente-principal;
     text-align: start;
 }
 .redes-del-footer img, .redes-del-footer2 img{
@@ -559,95 +813,7 @@ height: 15px;
     font-size: 1rem;
 
 }
-.coneccionComunidadDiscord{
-    width: 100%;
-    height: 45rem;
-    background-color: $color-principal;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.imagenMobileColeccion{
-    width: 100%;
-    height: 100%;
-}
-.leyendaDeDiscord{
-    text-align: start;
-    margin-left: 1rem;
-    color: white;
-}
-.h3small{
-    font-size: 1rem;
-}
-.botonDiscord{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 800;
-    background-color: rgb(231, 213, 17);
-    border-radius: 20px;
-    padding: 15px 30px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-.imagenDiscordBoton{
-    height: 15px;
-    width: 15px;
-    margin-bottom: 0.2rem;
-}
-.leyendaDeDiscord a{
-    margin-top: 5rem;
-}
-.contenedorNft{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.cardNft{
-    background-color: $color-secuandario-dos;
-    width: 320px;
-    height: 300px;
-    border-radius: 15px;
-}
-.imagenNft{
-    background-color: gray;
-    height: 170px;
-    margin-bottom: 1rem;
-    background-size: cover;
-    border-radius: 15px 15px 0 0;
-}
-.imagenNft1{
-    background-image: url(../img/bearcolection.png);
-}
-.imagenNft2{
-    background-image: url(../img/cowcolection.png);
-}
-.imagenNft3{
-    background-image: url(../img/honeycolection.png);
-}
-.coleccionesRecomendadas{
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-}
-.cardNft h2{
-    font-size: 1rem;
-}
-.cardNft h2, .cardNft p{
-    color: white;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-.cardNft p{
-    font-size: 0.8rem;
-}
-.cardNft h2 img{
-    width: 15px;
-    height: 15px;
-}
+
 @media screen and (min-width: 400px){
     .primerBloque{
         margin-right: 1rem;
@@ -662,8 +828,10 @@ height: 15px;
 }
 
 @media screen and (min-width: 525px){
-    .coneccionComunidadDiscord{
-        height: 55rem;
+    .pagina-nft{
+        .coneccionComunidadDiscord{
+            height: 50rem;
+        }
     }
 }
 @media screen and (min-width: 600px){
@@ -686,127 +854,150 @@ height: 15px;
             }
         }
     }
+    .pagina-nft{
+        .informacionCryptoNFT{
+            .informacionNFTTexto{
+                flex-wrap: wrap;
+                width: 600px;
+            }
+        }
+        .coneccionComunidadDiscord{
+            height: 55rem;
+        }
+    }
 }
 @media screen and (min-width: 768px){
 
     .pagina-index{
-        main{
-            .flexImgMobile{
+        .bloqueCards{
+            flex-direction: row;
+            height: 60rem;
+            .cardPackStandar{
+                margin-bottom: 2rem;
+            }
+        }
+        #fondoDos{
+            .carrusel{
+                .seccionesCarrusel{
+                    .seccionTexto{
+                        padding: 0.5rem 0.5rem;
+                        font-size: 1.5rem;
+                        h4{
+                            font-size: 1.2rem;
+                            font-style: normal;
+                        }
+                        a{
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                img{
+                    height: 200px;
+                    width: 280px;
+                }
+            } 
+        }
+        #fondo{
+            background-size: contain;
+            main{
+                .flexImgMobile{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 1rem;
+                    width: 240px;
+                    height: 290px;
+                    margin-top: 2rem;
+                }
+                div{
+                    .imgMobileIndex{
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+                }
+            }
+        } 
+        .asideIndex{
+            align-items: center;
+            margin-right: 0;
+            h2{
+                margin: 0.5rem 0rem 0.5rem 0rem;
+                font-size: large;
+            }
+            .carruselVideo{
                 display: flex;
-                align-items: center;
                 justify-content: center;
-                margin-left: 1rem;
-                width: 240px;
-                height: 290px;
-                margin-top: 2rem;
-                .imgMobileIndex{
-                    width: 100%;
-                    height: 100%;
-                    display: block;
+                margin-right: 0.5rem;
+                gap: 1rem;
+            }
+        }
+    }
+    //CRYPTO
+    .contenedorCrypto{
+        main{
+            .topCryptoTitulo{
+                font-size: 1.7rem;
+            }
+        }
+        .informacionCrypto{
+            .informacionCryptoTexto{
+                width: 600px;
+                gap: 2rem;
+                div{
+                    h2{
+                        font-size: 1.7rem;
+                    }
+                    p{
+                        font-size: 1.3rem;
+                    }
+                } 
+                .contenedorImagenEstadistica img{
+                    width: 600px;
+                    height: 720px;
+                }
+            }
+        }
+        .carruselVideoDos{
+            h2{
+                text-align: center;
+                font-size: 1.7rem;
+            }
+            .carruselVideoYoutube{
+                flex-direction: row;
+                justify-content: center;
+                .videosEnCrypto{
+                    iframe{
+                        width: 230px;
+                        height: 120px;
+                        border: 0;
+                    }
+                } 
+            }
+        } 
+    }
+    //NFT
+    .pagina-nft{
+        .informacionCryptoNFT{
+            .contenedorVideoNFT{
+                iframe{
+                    width: 535px;
+                    height: 300px;
                 }
             }
         }
     }
-    .imgMobileIndex {
-        display: block;
-        width: 15rem;
-        height: 2rem;
-    }
-    .logotipoChico{
-        display: none;
-    }
-    .carruselVideo{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 0.5rem;
-        gap: 1rem;
-    }
-    aside h2{
-        margin: 0.5rem 0rem 0.5rem 0rem;
-        font-size: large;
-    }
-    .videos iframe{
-        width: 300px;
-        height: 170px;
-        border: 0;
-    }
-    .pieDePagina{
-        justify-content: space-evenly;
-        height: auto;
-        margin-bottom: 15px;
-    }
-    .pieDePagina h5{
-        font-size: 1.2rem;
-    }
-    section img{
-        height: 200px;
-        width: 280px;
-    }
-    .navegador{
-        justify-content: space-around;
-    }
-    .seccionTexto{
-        padding: 0.5rem 0.5rem;
-        font-size: 1.5rem;
-    }
-    .seccionTexto h4{
-        font-size: 1.2rem;
-        font-style: normal;
-    }
-    .seccionTexto a{
-        font-size: 1.4rem;
-    }
-    .pieDePagina ul li a{
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-
-    }
-    .informacionCryptoTexto{
-        width: 600px;
-        gap: 2rem;
-    }
-    .contenedorImagenEstadistica img{
-        width: 600px;
-        height: 720px;
-    }
-    .carruselVideoYoutube{
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-    .videosEnCrypto iframe{
-        width: 230px;
-        height: 120px;
-        border: 0;
-    }
-    .carruselVideoDos h2{
-        text-align: center;
-        font-size: 1.7rem;
-    }
-    .informacionCryptoTexto div h1{
-        font-size: 1.7rem;
-    }
-    .informacionCryptoTexto div p{
-        font-size: 1.3rem;
-    }
-    .topCryptoTitulo{
-        font-size: 1.7rem;
-    }
-    .contenedorVideoNFT iframe{
-        width: 535px;
-        height: 300px;
-    }
-    .contenedorPerfiles{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 0rem;
+    //NOSOTROS
+    .contenedorNosotros{
+        .contenedorPerfiles{
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     .textoParaMartin{
         height: 120px;
     }
+    //CONTACTO (CON BOOSTRAP)
     .container-form{
         max-width: 512px;
     }
@@ -828,6 +1019,21 @@ height: 15px;
         display: flex;
         justify-content: center;
     }
+    //ESTILOS GLOBALES DEL FOOTER
+    .pieDePagina{
+        justify-content: space-evenly;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .pieDePagina h5{
+        font-size: 1.2rem;
+    }
+    .pieDePagina ul li a{
+        text-decoration: none;
+        color: $color-fuente-principal;
+        font-size: 1.2rem;
+
+    }
 
 }
 @media screen and (min-width: 800px){
@@ -842,118 +1048,123 @@ height: 15px;
         gap: 5rem;
      }
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 900px){
     .pagina-index{
-        .primerBloque{
-            align-items: center;
-            height: 37rem;
-            justify-content: center;
-            gap: 5rem;
-            .textoMasBoton{
-                width: 420px;
-            }
-            .flexImgMobile{
-                align-items: center;
-            }
-        }
-    }
-    .contenedorIndex{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "sectionIndex asideIndex"
-        ;
-        .carrusel{
+        .bloqueCards{
             flex-direction: row;
-            flex-wrap: wrap;
+            height: 60rem;
+            .cardPackStandar{
+                margin-bottom: 2rem;
+                height: 40rem;
+                width: 28rem;
+            }
+            .cardPackPremium{
+                height: 40rem;
+                width: 28rem;
+            }
         }
     }
-    .seccionesCarruselDos{
-        display: flex;
-        justify-content: center;
-    }
-    .seccionesCarrusel{
-        display: flex;
-        justify-content: center;
-    }
-    .seccionTexto{
-        padding: 0.5rem 0.5rem;
-        font-size: 1.5rem;
-        width: 13rem;
-    }
-    #fondo{
-        height: 50rem;
-    }
-    .textoBienvenida{
-        text-align: center;
-        color: white;
-        font-size: 4rem;
-        line-height: 4.1rem;
-        text-transform: uppercase;
-    }
-    .botonBienvenida{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 800;
-        border-radius: 20px;
-        padding: 15px 40px;
-        color: white;
-        text-decoration: none;
-    }
-    .botonBienvenidaDos{
-        padding: 15px 60px;
-    }
-    .navegador{
-        height: 60px;
-        justify-content: space-evenly;
-    }
-    .menu{
-        gap: 3rem;
-    }
-    .carruselVideoYoutube{
-        gap: 2rem;
+}
+@media screen and (min-width: 1024px){
+    //INDEX
+    .pagina-index{
+        #fondo{
+            height: 50rem;
+            .primerBloque{
+                align-items: flex-end;
+                height: 37rem;
+                justify-content: center;
+                gap: 5rem;
+                padding-bottom: 9rem;
+                .botonesInicio{
+                    flex-direction: row;
+                }
+                .bubbleMasScroll{
+                    
+                }
+                .textoMasBoton{
+                    width: 420px;
+                    .textoBienvenida{
+                        text-align: center;
+                        color: $color-fuente-principal;
+                        font-size: 4rem;
+                        line-height: 4.1rem;
+                        text-transform: uppercase;
+                    }
+                    .botonesInicio{
+                        .botonBienvenida{
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 800;
+                            border-radius: 20px;
+                            padding: 15px 40px;
+                            color: $color-fuente-principal;
+                            text-decoration: none;
+                        }
+                        .botonBienvenidaDos{
+                            padding: 15px 40px;
+                        }
+                    }
+                }
+                .flexImgMobile{
+                    align-items: center;
+                }
+            }
+        }
+        #fondoDos{
+            background-repeat: no-repeat;
+            background-size: cover;
+            section{
+                img{
+                    height: 220px;
+                    width: 300px;
+                }
+            }
+        }
+        .contenedorIndex{
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            "sectionIndex asideIndex"
+            ;
+            .carrusel{
+                flex-direction: column;
+                flex-wrap: wrap;
+                .seccionesCarrusel{
+                    display: flex;
+                    justify-content: center;
+                    .seccionTexto{
+                        padding: 0.5rem 0.5rem;
+                        font-size: 1.5rem;
+                        width: 13rem;
+                    }
+                }
+            }
+        }
     }
     .videosEnCrypto iframe{
         width: 340px;
         height: 190px;
     }
-    .carruselVideoDos h2{
-        text-align: center;
-        font-size: 1.7rem;
-    }
-    .informacionCryptoTexto div h2{
-        font-size: 2.3rem;
-    }
-    .informacionCryptoTexto div p{
-        font-size: 1.5rem;
-    }
-    .topCryptoTitulo{
-        font-size: 1.5rem;
-    }
-    .contenedorImagenEstadistica img{
-        width: 600px;
-        height: 720px;
-    }
-    .seccionMonedas{
-        gap: 2rem;
-    }
-    .informacionCrypto{
-        padding-top: 2rem;
-    }
-    .informacionCryptoTexto{
-        justify-content: center;
-        width: 1000px;
-    }
-    .contenedorImagenEstadistica{
-        align-items: center;
+    //NFT
+    .pagina-nft{
+        .informacionCryptoNFT{
+            .informacionNFTTexto{
+                width: 900px;
+            }
+        }
+        .coneccionComunidadDiscord{
+            flex-direction: row;
+            height: 35rem;
+        }  
     }
     .contenedorVideoNFT iframe{
         width: 560px;
         height: 315px;
     }
-    .contenedorPerfiles{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        gap: 0rem;
+    .contenedorNosotros{
+        .contenedorPerfiles{
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     }
     .textoParaMartin{
         height: 120px;
@@ -973,9 +1184,52 @@ height: 15px;
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        .leyendaDeDiscord{
+            width: 1000px;
+            p{
+                width: 650px;
+            }
+        }
     }
     .coleccionesRecomendadas{
         font-size: 1.5rem;
+    }
+    .contenedorCrypto{
+        .carruselVideoDos{
+            .carruselVideoYoutube{
+                gap: 2rem;
+            }
+        } 
+        .informacionCrypto{
+            padding-top: 2rem;
+            .informacionCryptoTexto{
+                justify-content: center;
+                width: 1000px;
+                div{
+                    h2{
+                        font-size: 2.3rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+                .contenedorImagenEstadistica{
+                    align-items: center;
+                    img{
+                        width: 600px;
+                        height: 720px;
+                    }
+                } 
+            }
+        }
+        main{
+            .topCryptoTitulo{
+                font-size: 1.5rem;
+            }
+            .seccionMonedas{
+                gap: 2rem;
+            }
+        }
     }
 }
 @media screen and (min-width: 1100px){
@@ -990,6 +1244,23 @@ height: 15px;
                 width: 400px;
                 height: 400px;
             }
+        }
+    }
+}
+@media screen and (min-width: 1500px){
+    .pagina-nft{
+        .informacionCryptoNFT{
+            .informacionNFTTexto{
+                width: 1300px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1780px){
+    .pagina-index{
+        #fondoDos{
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
 }
