@@ -193,7 +193,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
-    background: rgba(20, 39, 248, 0.1);
+    background: rgba(20, 39, 248, 0.4);
     border-radius: 20px;
     padding: 15px 45px;
     color: #ffffff;
@@ -257,7 +257,7 @@ body {
       font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
       font-weight: 800;
-      background: rgba(241, 1, 96, 0.163);
+      background: rgba(241, 1, 96, 0.4);
       border-radius: 20px;
       padding: 15px 45px;
       color: #ffffff;
@@ -312,9 +312,11 @@ body {
 
 .contenedorCrypto main .topCryptoTitulo {
   color: #ffffff;
-  font-size: medium;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  margin-top: 4rem; }
 
 .contenedorCrypto main .seccionMonedas {
   display: flex;
@@ -422,9 +424,11 @@ body {
       color: white; }
   .pagina-nft .coleccionesRecomendadas {
     display: flex;
+    font-family: 'Bebas Neue', cursive;
     justify-content: center;
+    margin-top: 4rem;
     color: #ffffff;
-    font-size: 1.2rem; }
+    font-size: 1.8rem; }
   .pagina-nft .contenedorNft {
     display: flex;
     justify-content: center;
@@ -461,7 +465,7 @@ body {
         background-image: url(../img/honeycolection.png); }
   .pagina-nft .coneccionComunidadDiscord {
     width: 98%;
-    height: 43rem;
+    height: 52rem;
     background-color: #191919;
     border-radius: 20px;
     margin-left: 0.5rem;
@@ -470,14 +474,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem; }
+    gap: 3.5rem; }
     .pagina-nft .coneccionComunidadDiscord div .imagenMobileColeccion {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      max-width: 500px;
+      max-height: 500px; }
     .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord {
+      display: flex;
+      flex-direction: column;
       text-align: start;
+      gap: 0.5rem;
       margin-left: 1rem;
       color: #ffffff; }
+      .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord h3 {
+        font-size: 3rem; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord a {
         margin-top: 5rem; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .h3small {
@@ -488,6 +499,8 @@ body {
         background-color: #e7d511;
         border-radius: 20px;
         padding: 15px 30px;
+        width: 140px;
+        margin: 0;
         color: white;
         text-decoration: none; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .imagenDiscordBoton {
@@ -519,10 +532,39 @@ body {
     .pagina-nft footer p {
       color: #ffffff; }
 
-.contenedorNosotros .informacionNosotros {
+.contenedorNosotros .contenedorPerfiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .contenedorNosotros .contenedorPerfiles .cardPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    height: 400px;
+    width: 300px;
+    gap: 0.2rem;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(20, 39, 248, 0.4); }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil h2 {
+      font-size: 2rem; }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil h3 {
+      font-size: 1rem;
+      font-weight: 100; }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil h4 {
+      font-size: 1.2rem;
+      font-weight: 300; }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil a img {
+      height: 20px;
+      width: 20px; }
+
+.informacionNosotros {
   text-align: center; }
 
-.contenedorNosotros .informacionNosotrosTexto {
+.informacionNosotrosTexto {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -531,19 +573,14 @@ body {
   gap: 1rem;
   color: #ffffff; }
 
-.contenedorNosotros .contenedorPerfiles {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.contenedorNosotros .textoParaMartin {
+.textoParaMartin {
   margin-top: 2rem;
   text-align: center;
   color: #ffffff;
   height: 100px; }
 
 .nav-item a {
-  color: gray; }
+  color: white; }
 
 .navbar-toggler-icon {
   color: azure; }
@@ -578,18 +615,16 @@ footer {
   justify-content: center;
   gap: 1rem;
   color: #ffffff;
-  width: 100%;
   height: 6.5rem;
-  margin-top: 1rem;
-  margin-left: 1rem; }
+  margin-top: 2rem; }
 
 .pieDePagina div ul li a:hover {
   color: grey; }
 
 .pieDePaginaRedes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem; }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.7rem; }
 
 .pieDePagina h5 {
   font-size: 1rem; }
@@ -709,6 +744,8 @@ ol, ul {
     height: 55rem; } }
 
 @media screen and (min-width: 768px) {
+  .pagina-index .primerBloque {
+    align-items: center; }
   .pagina-index .bloqueCards {
     flex-direction: row;
     height: 60rem; }
@@ -731,9 +768,6 @@ ol, ul {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: 1rem;
-      width: 240px;
-      height: 290px;
       margin-top: 2rem; }
     .pagina-index #fondo main div .imgMobileIndex {
       width: 100%;
@@ -750,8 +784,6 @@ ol, ul {
       justify-content: center;
       margin-right: 0.5rem;
       gap: 1rem; }
-  .contenedorCrypto main .topCryptoTitulo {
-    font-size: 1.7rem; }
   .contenedorCrypto .informacionCrypto .informacionCryptoTexto {
     width: 600px;
     gap: 2rem; }
@@ -775,11 +807,10 @@ ol, ul {
   .pagina-nft .informacionCryptoNFT .contenedorVideoNFT iframe {
     width: 535px;
     height: 300px; }
-  .contenedorNosotros .contenedorPerfiles {
-    flex-direction: row;
-    justify-content: center; }
   .textoParaMartin {
     height: 120px; }
+  .contenedor-contacto .text-white .container .row {
+    gap: 4rem; }
   .container-form {
     max-width: 512px; }
   .contenedor-imagen-consulta {
@@ -809,7 +840,7 @@ ol, ul {
 
 @media screen and (min-width: 800px) {
   .contenedorIndex {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "sectionIndex asideIndex"; }
   .primerBloque {
     justify-content: space-between;
@@ -831,11 +862,10 @@ ol, ul {
   .pagina-index #fondo {
     height: 50rem; }
     .pagina-index #fondo .primerBloque {
-      align-items: flex-end;
       height: 37rem;
       justify-content: center;
       gap: 5rem;
-      padding-bottom: 9rem; }
+      margin-top: 5rem; }
       .pagina-index #fondo .primerBloque .botonesInicio {
         flex-direction: row; }
       .pagina-index #fondo .primerBloque .textoMasBoton {
@@ -843,8 +873,8 @@ ol, ul {
         .pagina-index #fondo .primerBloque .textoMasBoton .textoBienvenida {
           text-align: center;
           color: #ffffff;
-          font-size: 4rem;
-          line-height: 4.1rem;
+          font-size: 5rem;
+          line-height: 5.5rem;
           text-transform: uppercase; }
         .pagina-index #fondo .primerBloque .textoMasBoton .botonesInicio .botonBienvenida {
           font-family: 'Roboto', sans-serif;
@@ -864,7 +894,7 @@ ol, ul {
       height: 220px;
       width: 300px; }
   .pagina-index .contenedorIndex {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "sectionIndex asideIndex"; }
     .pagina-index .contenedorIndex .carrusel {
       flex-direction: column;
@@ -882,6 +912,7 @@ ol, ul {
   .pagina-nft .informacionCryptoNFT .informacionNFTTexto {
     width: 900px; }
   .pagina-nft .coneccionComunidadDiscord {
+    margin-top: 3rem;
     flex-direction: row;
     height: 35rem; }
   .contenedorVideoNFT iframe {
@@ -907,10 +938,13 @@ ol, ul {
     gap: 1rem; }
     .coneccionComunidadDiscord .leyendaDeDiscord {
       width: 1000px; }
+      .coneccionComunidadDiscord .leyendaDeDiscord h3 {
+        font-size: 3rem; }
       .coneccionComunidadDiscord .leyendaDeDiscord p {
         width: 650px; }
   .coleccionesRecomendadas {
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive; }
   .contenedorCrypto .carruselVideoDos .carruselVideoYoutube {
     gap: 2rem; }
   .contenedorCrypto .informacionCrypto {
@@ -927,20 +961,22 @@ ol, ul {
         .contenedorCrypto .informacionCrypto .informacionCryptoTexto .contenedorImagenEstadistica img {
           width: 600px;
           height: 720px; }
-  .contenedorCrypto main .topCryptoTitulo {
-    font-size: 1.5rem; }
   .contenedorCrypto main .seccionMonedas {
     gap: 2rem; } }
 
 @media screen and (min-width: 1100px) {
-  .pagina-index .primerBloque {
+  .pagina-index #fondo .primerBloque {
     justify-content: space-around; }
-    .pagina-index .primerBloque .textoMasBoton {
+    .pagina-index #fondo .primerBloque .textoMasBoton {
       width: 420px; }
-    .pagina-index .primerBloque .flexImgMobile {
+    .pagina-index #fondo .primerBloque .flexImgMobile {
       align-items: center;
-      width: 400px;
-      height: 400px; } }
+      gap: 1rem;
+      max-width: 800px;
+      max-height: 800px; }
+      .pagina-index #fondo .primerBloque .flexImgMobile .imgMobileIndex {
+        width: 80%;
+        height: 80%; } }
 
 @media screen and (min-width: 1500px) {
   .pagina-nft .informacionCryptoNFT .informacionNFTTexto {
