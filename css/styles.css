@@ -105,7 +105,7 @@ body {
         .pagina-index #fondo main .bubbleMasScroll .scrollDownFlex .botonBienvenidaTres {
           border-radius: 30px;
           border: 0.5px solid #f10160;
-          padding: 10px 13px;
+          padding: 13px;
           text-decoration: none;
           width: 50px; }
           .pagina-index #fondo main .bubbleMasScroll .scrollDownFlex .botonBienvenidaTres img {
@@ -193,7 +193,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
-    background: rgba(20, 39, 248, 0.4);
+    background: rgba(20, 39, 248, 0.6);
     border-radius: 20px;
     padding: 15px 45px;
     color: #ffffff;
@@ -435,11 +435,15 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem; }
+    .pagina-nft .contenedorNft .cardNft:hover {
+      transform: translateY(-10%); }
     .pagina-nft .contenedorNft .cardNft {
       background-color: #1038ee;
       width: 320px;
       height: 300px;
-      border-radius: 15px; }
+      border-radius: 15px;
+      margin-top: 3rem;
+      transition: all 400ms ease; }
       .pagina-nft .contenedorNft .cardNft h2 {
         font-size: 1rem; }
         .pagina-nft .contenedorNft .cardNft h2 img {
@@ -488,21 +492,31 @@ body {
       margin-left: 1rem;
       color: #ffffff; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord h3 {
-        font-size: 3rem; }
+        font-size: 3rem;
+        font-weight: 800;
+        color: #1038ee; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord a {
         margin-top: 5rem; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .h3small {
-        font-size: 1rem; }
+        font-size: 1rem;
+        color: white; }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .botonDiscord {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
         font-family: 'Roboto', sans-serif;
         font-weight: 800;
-        background-color: #e7d511;
+        background-color: #1038ee;
         border-radius: 20px;
         padding: 15px 30px;
-        width: 140px;
+        width: 180px;
         margin: 0;
         color: white;
-        text-decoration: none; }
+        text-decoration: none;
+        transition: all 400ms ease; }
+      .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .botonDiscord:hover {
+        transform: translateY(-10%); }
       .pagina-nft .coneccionComunidadDiscord .leyendaDeDiscord .imagenDiscordBoton {
         height: 15px;
         width: 15px;
@@ -535,31 +549,80 @@ body {
 .contenedorNosotros .contenedorPerfiles {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center; }
+  .contenedorNosotros .contenedorPerfiles .cardPerfil::before {
+    content: "";
+    position: absolute;
+    height: 45%;
+    width: 100%;
+    background-color: #1038ee;
+    border-radius: 20px 20px 0 0; }
+  .contenedorNosotros .contenedorPerfiles .cardPerfil:hover {
+    transform: translateY(-3%); }
   .contenedorNosotros .contenedorPerfiles .cardPerfil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    height: 400px;
-    width: 300px;
-    gap: 0.2rem;
+    position: relative;
     border-radius: 20px;
-    color: white;
-    background-color: rgba(20, 39, 248, 0.4); }
-    .contenedorNosotros .contenedorPerfiles .cardPerfil h2 {
-      font-size: 2rem; }
-    .contenedorNosotros .contenedorPerfiles .cardPerfil h3 {
-      font-size: 1rem;
-      font-weight: 100; }
-    .contenedorNosotros .contenedorPerfiles .cardPerfil h4 {
-      font-size: 1.2rem;
-      font-weight: 300; }
-    .contenedorNosotros .contenedorPerfiles .cardPerfil a img {
-      height: 20px;
-      width: 20px; }
+    background: white;
+    width: 280px;
+    margin: 20px 0;
+    transition: all 400ms ease; }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      position: relative;
+      z-index: 100; }
+      .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .redesIconos {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .redesIconos img {
+          opacity: 0.6;
+          margin-top: 10px;
+          transition: all 0.3s ease;
+          height: 20px;
+          width: 20px;
+          cursor: pointer; }
+        .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .redesIconos img:hover {
+          opacity: 1; }
+      .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .estrellas {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem; }
+        .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .estrellas img {
+          height: 25px;
+          width: 25px;
+          margin: 0 3px;
+          transition: all 400ms ease; }
+        .contenedorNosotros .contenedorPerfiles .cardPerfil .cardContenido .estrellas img:hover {
+          transform: translateY(-15%); }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil .nombreProfesion {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      color: #1038ee; }
+      .contenedorNosotros .contenedorPerfiles .cardPerfil .nombreProfesion .nombre {
+        font-size: 1.3rem;
+        font-weight: 600; }
+      .contenedorNosotros .contenedorPerfiles .cardPerfil .nombreProfesion .profesion {
+        font-size: 1rem;
+        font-weight: 500; }
+    .contenedorNosotros .contenedorPerfiles .cardPerfil .imagenPerfil {
+      height: 140px;
+      width: 140px;
+      border-radius: 50%;
+      padding: 3px;
+      background-color: #1038ee; }
+      .contenedorNosotros .contenedorPerfiles .cardPerfil .imagenPerfil img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%; }
 
 .informacionNosotros {
   text-align: center; }
@@ -723,7 +786,7 @@ ol, ul {
 
 @media screen and (min-width: 525px) {
   .pagina-nft .coneccionComunidadDiscord {
-    height: 50rem; } }
+    height: 52rem; } }
 
 @media screen and (min-width: 600px) {
   .pagina-index main .bubbleMasScroll {
@@ -918,9 +981,6 @@ ol, ul {
   .contenedorVideoNFT iframe {
     width: 560px;
     height: 315px; }
-  .contenedorNosotros .contenedorPerfiles {
-    flex-direction: row;
-    justify-content: space-evenly; }
   .textoParaMartin {
     height: 120px; }
   .container-form {
@@ -937,11 +997,9 @@ ol, ul {
     align-items: center;
     gap: 1rem; }
     .coneccionComunidadDiscord .leyendaDeDiscord {
-      width: 1000px; }
+      width: 600px; }
       .coneccionComunidadDiscord .leyendaDeDiscord h3 {
         font-size: 3rem; }
-      .coneccionComunidadDiscord .leyendaDeDiscord p {
-        width: 650px; }
   .coleccionesRecomendadas {
     font-size: 1.5rem;
     font-family: 'Bebas Neue', cursive; }
@@ -962,7 +1020,11 @@ ol, ul {
           width: 600px;
           height: 720px; }
   .contenedorCrypto main .seccionMonedas {
-    gap: 2rem; } }
+    gap: 2rem; }
+  .contenedorNosotros .contenedorPerfiles {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem; } }
 
 @media screen and (min-width: 1100px) {
   .pagina-index #fondo .primerBloque {
