@@ -74,7 +74,8 @@ body {
         border-radius: 20px;
         padding: 15px 20px;
         color: #ffffff;
-        text-decoration: none; }
+        text-decoration: none;
+        transition: all 400ms ease; }
       .pagina-index #fondo main div .botonesInicio .botonBienvenidaDos {
         font-family: 'Roboto', sans-serif;
         font-size: 0.9rem;
@@ -86,11 +87,12 @@ body {
         text-decoration: none;
         align-items: center;
         display: flex;
-        gap: 0.5rem; }
+        gap: 0.5rem;
+        transition: all 400ms ease; }
       .pagina-index #fondo main div .botonesInicio .botonBienvenidaDos:hover {
-        color: gray; }
+        transform: translateY(-10%); }
       .pagina-index #fondo main div .botonesInicio .botonBienvenida:hover {
-        color: gray; }
+        transform: translateY(-10%); }
     .pagina-index #fondo main .flexImgMobile .imgMobileIndex {
       width: 98%;
       height: 98%; }
@@ -137,6 +139,9 @@ body {
   background-image: url(../img/fondocryptoiniciotres.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
+  .pagina-index .bloqueCards .cardPackStandar:hover {
+    transform: translateY(-2%);
+    box-shadow: 0 0 5px #1038ee, 0 0 15px #1038ee, 0 0 30px #1038ee, 0 0 10px #1038ee; }
   .pagina-index .bloqueCards .cardPackStandar {
     display: flex;
     flex-direction: column;
@@ -150,7 +155,8 @@ body {
     background: rgba(35, 53, 249, 0.163);
     border-style: solid;
     border-width: 3px;
-    border-color: rgba(35, 53, 249, 0.163); }
+    border-color: rgba(35, 53, 249, 0.163);
+    transition: all 400ms ease; }
     .pagina-index .bloqueCards .cardPackStandar h2 {
       font-weight: lighter;
       font-size: 3rem;
@@ -189,6 +195,8 @@ body {
         font-weight: bold; }
         .pagina-index .bloqueCards .cardPackStandar .precioStandar .priceChico span {
           font-size: 2.3rem; }
+  .pagina-index .bloqueCards .botonCard .botonCardUno:hover {
+    box-shadow: 0 0 5px #1038ee, 0 0 15px #1038ee, 0 0 30px #1038ee, 0 0 10px #1038ee; }
   .pagina-index .bloqueCards .botonCard .botonCardUno {
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
@@ -200,6 +208,9 @@ body {
     text-decoration: none;
     align-items: center;
     gap: 0.5rem; }
+  .pagina-index .bloqueCards .cardPackPremium:hover {
+    transform: translateY(-2%);
+    box-shadow: 0 0 5px #f10160, 0 0 15px #f10160, 0 0 30px #f10160, 0 0 10px #f10160; }
   .pagina-index .bloqueCards .cardPackPremium {
     display: flex;
     flex-direction: column;
@@ -253,6 +264,8 @@ body {
         font-weight: bold; }
         .pagina-index .bloqueCards .cardPackPremium .precioPremium .priceChico span {
           font-size: 2.3rem; }
+    .pagina-index .bloqueCards .cardPackPremium .botonCard .botonCardDos:hover {
+      box-shadow: 0 0 5px #f10160, 0 0 15px #f10160, 0 0 30px #f10160, 0 0 10px #f10160; }
     .pagina-index .bloqueCards .cardPackPremium .botonCard .botonCardDos {
       font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
@@ -316,13 +329,18 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  margin-top: 4rem; }
+  margin-top: 4rem;
+  margin-bottom: 1rem; }
 
 .contenedorCrypto main .seccionMonedas {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem; }
+  .contenedorCrypto main .seccionMonedas .monedaUno:hover {
+    transform: translateY(-10%); }
+  .contenedorCrypto main .seccionMonedas .monedaUno:hover {
+    box-shadow: 0 0 5px #1038ee, 0 0 15px #1038ee, 0 0 30px #1038ee, 0 0 10px #1038ee; }
   .contenedorCrypto main .seccionMonedas .monedaUno {
     display: flex;
     background-color: #ffffff;
@@ -331,7 +349,8 @@ body {
     height: 100px;
     width: 160px;
     border-radius: 5px;
-    align-items: center; }
+    align-items: center;
+    transition: all 400ms ease; }
     .contenedorCrypto main .seccionMonedas .monedaUno .monedaParteUno {
       margin-left: 0.5rem; }
       .contenedorCrypto main .seccionMonedas .monedaUno .monedaParteUno .monedaBtc {
@@ -436,7 +455,8 @@ body {
     gap: 1rem;
     margin-bottom: 1rem; }
     .pagina-nft .contenedorNft .cardNft:hover {
-      transform: translateY(-10%); }
+      transform: translateY(-10%);
+      box-shadow: 0 0 5px #1038ee, 0 0 15px #1038ee, 0 0 30px #1038ee, 0 0 10px #1038ee; }
     .pagina-nft .contenedorNft .cardNft {
       background-color: #1038ee;
       width: 320px;
@@ -546,6 +566,29 @@ body {
     .pagina-nft footer p {
       color: #ffffff; }
 
+.contenedorNosotros .masInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem; }
+  .contenedorNosotros .masInfo div p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white; }
+  .contenedorNosotros .masInfo div a {
+    transition: all 400ms ease;
+    text-decoration: none; }
+    .contenedorNosotros .masInfo div a img {
+      height: 50px;
+      width: 50px; }
+  .contenedorNosotros .masInfo div a:hover {
+    transform: translateY(-10%); }
+  .contenedorNosotros .masInfo .masInfoRedes {
+    display: flex;
+    gap: 1rem; }
+
 .contenedorNosotros .contenedorPerfiles {
   display: flex;
   flex-direction: column;
@@ -558,7 +601,8 @@ body {
     background-color: #1038ee;
     border-radius: 20px 20px 0 0; }
   .contenedorNosotros .contenedorPerfiles .cardPerfil:hover {
-    transform: translateY(-3%); }
+    transform: translateY(-3%);
+    box-shadow: 0 0 5px #1038ee, 0 0 15px #1038ee, 0 0 30px #1038ee, 0 0 10px #1038ee; }
   .contenedorNosotros .contenedorPerfiles .cardPerfil {
     position: relative;
     border-radius: 20px;
@@ -632,15 +676,9 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
   gap: 1rem;
   color: #ffffff; }
-
-.textoParaMartin {
-  margin-top: 2rem;
-  text-align: center;
-  color: #ffffff;
-  height: 100px; }
 
 .nav-item a {
   color: white; }
@@ -847,6 +885,8 @@ ol, ul {
       justify-content: center;
       margin-right: 0.5rem;
       gap: 1rem; }
+  .contenedorCrypto section {
+    font-size: 0.8rem; }
   .contenedorCrypto .informacionCrypto .informacionCryptoTexto {
     width: 600px;
     gap: 2rem; }
@@ -870,8 +910,6 @@ ol, ul {
   .pagina-nft .informacionCryptoNFT .contenedorVideoNFT iframe {
     width: 535px;
     height: 300px; }
-  .textoParaMartin {
-    height: 120px; }
   .contenedor-contacto .text-white .container .row {
     gap: 4rem; }
   .container-form {
@@ -981,8 +1019,6 @@ ol, ul {
   .contenedorVideoNFT iframe {
     width: 560px;
     height: 315px; }
-  .textoParaMartin {
-    height: 120px; }
   .container-form {
     max-width: 812px; }
   .footer-separado {
@@ -1021,10 +1057,15 @@ ol, ul {
           height: 720px; }
   .contenedorCrypto main .seccionMonedas {
     gap: 2rem; }
+  .contenedorCrypto section {
+    font-size: 1rem; }
+  .contenedorNosotros .masInfo div p {
+    font-size: 1.4rem; }
   .contenedorNosotros .contenedorPerfiles {
     flex-direction: row;
     justify-content: center;
-    gap: 1rem; } }
+    gap: 1rem;
+    margin-top: 2rem; } }
 
 @media screen and (min-width: 1100px) {
   .pagina-index #fondo .primerBloque {
