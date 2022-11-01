@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Crypto, contactanos, contacto, redes, sociales, nosotros">
+            <!-- toastify js -->
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+            <!-- Bootstrap 5.2.0 -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <!-- Font Awesome 6.1.1 -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Contacto - Redes</title>
+    <meta name="description" content="Contactate y consultanos sobre nuestra Crypto Academia. Aprende todo sobre las nuevas tecnologias blockchain.">
+</head>
+<body>
+    <div class="contenedor-contacto">
+        <header class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-menu-color">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../img/45isotipo.png" alt="isotipo-de-crypto-academia">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0" style="width: fit-content; margin-left: auto!important;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="nft.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">NFT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="nft.html">Colecciones</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="nft.html#informacionCryptoNFT">Aprender</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="crypto.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Crypto</a>
+                            <ul class="dropdown-menu" >
+                                <li><a class="dropdown-item" href="crypto.html">Precio</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="crypto.html#informacionCrypto">Aprender</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-center">
+                        <div class="header-buscador-marco">
+                            <input type="text" name="buscar" id="buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-center justify-content-end">
+
+                        <a   
+                            
+                            class="cart position-relative d-inline-flex" 
+                            aria-label="View your shopping cart"
+                            data-bs-toggle="offcanvas" 
+                            data-bs-target="#offcanvasRight" 
+                            aria-controls="offcanvasRight">
+        
+                            <i class="fa-solid fa-cart-shopping position-relative" id="iconoCarrito">
+                                <span class="position-absolute 
+                                             top-0 
+                                             start-100 
+                                             translate-middle 
+                                             badge 
+                                             rounded-pill 
+                                             bg-danger"
+                                             
+                                             id="badgeCarritoEditado">
+                                        0
+                                </span>
+                            </i>
+        
+                        </a>
+        
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+
+            <div class="container mt-3 d-flex gap-3">
+    
+    
+                <div class="col-12">
+    
+                   
+                    <div class="col-12 h60 border bg-white rounded d-flex align-items-center p-3" id="headerProductos">
+                        <img class="imagenIA" src="/img/inteligencia-artificial.png" alt="inteligencia-artificial">     
+                        SERVICIOS DE ROBOTS DISPONIBLES
+                    </div>                
+                    
+                    <div id="productos">
+                    </div>            
+                   
+    
+                </div>
+    
+            </div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Tu pedido</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <div id="idCarrito">
+                
+                    <div class="row">
+
+                        <div class="col"></div>
+                        <div class="col">Nombre</div>
+                        <div class="col">Precio</div>
+                        <div class="col">Cantidad</div>
+                        <div class="col"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="text-white">
+            <div class="container d-flex justify-content-center">
+                <nav class="row footer-no-wrap">
+                    <ul class="col-4 list-unstyled">
+                        <li class="font-weight-bold text-uppercase">Leer Sobre</li>
+                        <li><a href="../pages/crypto.html" class="text-reset">Crypto</a></li>
+                        <li><a href="../pages/nosotros.html" class="text-reset">Blockchain</a></li>
+                        <li><a href="../pages/nft.html" class="text-reset">NFT</a></li>
+                    </ul>
+                    <ul class="col-4 list-unstyled">
+                        <li class="font-weight-bold text-uppercase">Quienes Somos</li>
+                        <li><a href="../pages/nosotros.html" class="text-reset">Nosotros</a></li>
+                        <li><a href="../pages/contacto.html" class="text-reset">Contacto</a></li>
+                    </ul>
+                    <ul class="col-4 list-unstyled">
+                        <li class="font-weight-bold text-uppercase ">Contactate</li>
+                        <li class="d-flex justify-conten-between gap-1 redes-del-footer">
+                            <a href="https://discord.com" class="text-reset"><img src="../img/logdiscord.png" alt="logo-discord"></a>
+                            <a href="https://instagram.com" class="text-reset"><img src="../img/logoinstagram.png" alt="logo-instagram"></a>
+                            <a href="https://youtube.com" class="text-reset"><img src="../img/logoyotube.png" alt="logo-youtube"></a>
+                            <a href="https://linkedin.com" class="text-reset"><img src="../img/logolinkedin.png" alt="logo-linkedin"></a>
+                        </li>
+                        <li class="d-flex justify-conten-between gap-1 redes-del-footer2">
+                            <a href="https://twitter.com" class="text-reset"><img src="../img/logotwitter.png" alt="logo-twitter"></a>
+                            <a href="https://facebook.com" class="text-reset"><img src="../img/logofacebook.png" alt="logo-facebook"></a>
+                            <a href="https://web.telegram.org" class="text-reset"><img src="../img/logotelegram.png" alt="logo-telegram"></a>
+                            <a href="https://www.reddit.com" class="text-reset"><img src="../img/logoreddit.png" alt="logo-reddit"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="d-block col-12 text-center h3-ultima-linea">
+                <h3> Copyright © 2022 All rights reserved </h3>
+            </div>
+        </footer>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- toastify js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="/assets/js/clases/Productos.js"></script>
+    <script src="/assets/js/clases/GestionarProductos.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
