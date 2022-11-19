@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     gestor.iniciar();
     
 })
-
+// funcion agregar al carrito
 function addCarrito(id){
 
     let prod = document.querySelector('#row_'+id);
@@ -25,7 +25,7 @@ function addCarrito(id){
 gestor.addCart(producto);
 
 }
-
+// funcion eliminar articulo
 function eliminar(id){
     gestor.eliminarArticulo(id);
 }

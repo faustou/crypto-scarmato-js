@@ -50,7 +50,7 @@ class GestionarProductos {
         this.actulizarContador();
 
     }
-
+    // carga de todos los productos del arreglo productos
     cargarProductos(productos){
         const divProductos = document.querySelector("#productos");
         divProductos.innerHTML = "";
@@ -97,12 +97,13 @@ class GestionarProductos {
         }
 
     }
+    // funcion del search
     buscar( q ) { 
 
         let resultado = productos.filter( producto => producto.nombre.toLowerCase().includes( q.toLowerCase() ) || producto.descripcion.toLowerCase().includes( q.toLowerCase() ));      
         this.cargarProductos( resultado );                   
     }
-
+    // funcion de agregar al carrito
     addCart( infoProducto ) {
         
         
@@ -128,32 +129,32 @@ class GestionarProductos {
     
             })
     carrito = articulos;      
-            Toastify({
+    Swal.fire({
+        position: 'top-end',
+        text: 'Producto agregado nuevamente',
+        showConfirmButton: false,
+        background: '#1038ee',
+        color: '#f5f5f5',
+        width: '380px',
 
-                text: "se actualizo la cantidad del producto",
-                duration: 3000,
-                gravity: "bottom",
-                position: "left",
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                  }
-            }).showToast();
+        timer: 2500
+      })
     
         }
         else 
         {
             // Como no existe lo agrego
             carrito.push(infoProducto);
-            Toastify({
-
-                text: "Se agrego el producto",
-                gravity: "bottom",
-                position: "left",
-                duration: 3000,
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                  }
-                }).showToast();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Producto agregado correctamente',
+                showConfirmButton: false,
+                iconColor: '#cb9b00',
+                background: '#1038ee',
+                color: '#f5f5f5',
+                timer: 2500
+              })
     
         }
     
@@ -172,7 +173,7 @@ class GestionarProductos {
     
             return contadorProductos;
         }
-
+    // funcion de actualizar el carrito
     actualizarCarrito(){
         
         this.actulizarContador();
@@ -180,7 +181,7 @@ class GestionarProductos {
         this.mostrarCarrito(); 
         this.guardarCarrito();
     }
-
+    // funcion de actualizar el contador
     actulizarContador(){
         let totalProductos = this.contarProductos();
         let countCarrito = document.querySelector('#badgeCarritoEditado');
@@ -190,21 +191,26 @@ class GestionarProductos {
     contarProductos(){
         let contadorProductos = 0 ;
         carrito.forEach ((producto) =>{
-
+            // suma el total de los precio de todas las cantidades de productos elegidos
             contadorProductos = contadorProductos + producto.cantidad;
         })
 
         return contadorProductos ;
     }
-
+        // elimina un articulo del carrito
         eliminarArticulo( id ) { 
 
             Swal.fire({
-                title: '"Esta seguro de eliminar el producto ?"',
+                title: '¿Estas seguro?',
+                text: "Se eliminaran los productos seleccionados del carrito.",
+                icon: 'warning',
                 showCancelButton: true,
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, eliminarlo',
-                cancelButtonText: `Cancelar`,
+                iconColor: '#cb9b00',
+                background: '#1038ee',
+                color: '#f5f5f5',
+                confirmButtonColor: '#cb9b00',
+                cancelButtonColor: '#cb9b00',
+                confirmButtonText: 'Si'
               }).then((result) => {
                 
                 if (result.isConfirmed) 
@@ -213,22 +219,26 @@ class GestionarProductos {
                     this.actualizarCarrito();
     
                     // Mostramos un msg con el resultado de la operacion
-                    Toastify({
-                        text: "El articulo fue eliminado del carrito",
-                        duration: 2000,
-                        gravity: 'bottom'
-    
-                    }).showToast();
+                    Swal.fire({
+                        title: 'Eliminado!',
+                        text: 'Se eliminaron tus productos correctamente.',
+                        icon: 'success',
+                        iconColor: '#cb9b00',
+                        background: '#1038ee',
+                        color: '#f5f5f5',
+                        confirmButtonColor: '#cb9b00'
+                      })
                 }            
               })            
         
     }
+    // guarda el carrito el localStorage (usando JSON)
     guardarCarrito(){
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
         
     }
-
+    // Funcion que inserta a html los productos seleccionados
     mostrarCarrito(){
 
         let detalleCarrito = document.querySelector("#idCarrito");
@@ -240,7 +250,7 @@ class GestionarProductos {
 
             const row = document.createElement ("div");
             row.classList.add("row");
-            total += parseInt(producto.precio);
+            total += parseInt(producto.precio*producto.cantidad);
 
             row.innerHTML = `
                         <div class="col-4 d-flex aling-items-center p-2 border-bottom">
@@ -265,7 +275,6 @@ class GestionarProductos {
 
         detalleCarrito.appendChild(row);
     })
-
         let row = document.createElement("div");
         row.classList.add("row");
 
@@ -283,6 +292,7 @@ class GestionarProductos {
         
 
     }
+    // mensaje automatizado
     mostrarHeader(msj){
         const headerProductos = document.querySelector("#headerProductos");
         headerProductos.innerHTML = msj ;
